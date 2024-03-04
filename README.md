@@ -1,10 +1,8 @@
 ## Link al curso completo de Javascript en Youtube:
+
 [VIDEO CURSO GRATIS COMPLETO: JavaScript Desde Cero por Sergie Code](https://youtu.be/N8Xt5rP_DUo)
 
-
 # Tutorial de Validación de Formulario con Firebase
-
-Link para ver resultado: [FORMULARIO CON FIREBASE FINALIZADO](https://validar-formulario-js.netlify.app/)
 
 Este es un tutorial paso a paso sobre cómo crear una aplicación de validación de formulario utilizando JavaScript y Firebase. La aplicación permite a los usuarios ingresar su nombre, correo electrónico y contraseña, y luego guarda los datos en una base de datos de Firebase. A continuación, se explica el funcionamiento del código JavaScript:
 
@@ -21,7 +19,7 @@ Antes de comenzar, asegúrate de obtener los datos de configuración necesarios 
       appId: "appId",
       measurementId: "measurementId"
     };
-    
+
     // Inicializar Firebase
     firebase.initializeApp(firebaseConfig);
 
@@ -46,7 +44,7 @@ Dentro del evento de envío, realizamos la validación de los campos del formula
 
     let entradaNombre = document.getElementById('name');
     let errorNombre = document.getElementById('nameError');
-    
+
     if (entradaNombre.value.trim() === '') {
       errorNombre.textContent = 'Por favor, introducí tu nombre';
       errorNombre.classList.add('error-message');
@@ -62,7 +60,7 @@ Verificamos si el valor del campo de nombre está en blanco. Si es así, mostram
     let emailEntrada = document.getElementById('email');
     let emailError = document.getElementById('emailError');
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Patrón de validación básico
-    
+
     if (!emailPattern.test(emailEntrada.value)) {
       emailError.textContent = 'Por favor, introducí un mail válido';
       emailError.classList.add('error-message');
@@ -78,7 +76,7 @@ Utilizamos una expresión regular (`emailPattern`) para validar el formato bási
     let contrasenaEntrada = document.getElementById('password');
     let contrasenaError = document.getElementById('passwordError');
     let contrasenaPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/;
-    
+
     if (!contrasenaPattern.test(contrasenaEntrada.value)) {
       contrasenaError.textContent = 'La contraseña debe tener al menos 8 caracteres, números, mayúsculas y minúsculas y caracteres especiales';
       contrasenaError.classList.add('error-message');
